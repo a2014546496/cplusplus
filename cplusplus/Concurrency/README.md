@@ -17,5 +17,12 @@
 ## c++中的线程
 1. 使用c++11标准，能够编写不依赖与平台的多线程代码。
 2. 熟悉c++11标准的 thread库  
-std::thread对象
- 
+std::thread对象:  
+```c++
+ void doSomeThing()
+ {
+    .....
+ }
+ std::thread myThread(doSomeThing); //创建了一个线程,该线程构造完成后直接执行doSomeThing函数
+```
+
