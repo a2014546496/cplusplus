@@ -1,0 +1,3 @@
+/home/pt/Desktop/c++/cplusplus/cmakeExample/build/CMakeFiles/rebuild_cache.dir
+/home/pt/Desktop/c++/cplusplus/cmakeExample/build/CMakeFiles/edit_cache.dir
+/home/pt/Desktop/c++/cplusplus/cmakeExample/build/CMakeFiles/main.dir

@@ -1,21 +1,14 @@
 #include<thread>
 #include <iostream>
 
-class background_task
+void fun()
 {
-public:
-    void operator()()const
-    {
-        while(true){
-            std::cout <<"1\n";
-        }
-    }
-};
 
+    std::cout << "111";
+}
 int main()
 {
-    background_task task1;
-    std::thread t1(task1);
+    std::thread t1(fun);
     t1.join();
     return 0;
 }

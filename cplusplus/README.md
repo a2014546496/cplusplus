@@ -96,3 +96,74 @@
 
 
 ## CMake编译工程
+1. CMake目录结构
+* 项目主目录存在一个CMakeLists.txt
+* 两种编译规则：（1）包含源文件的子文件夹包含CMakeLists.txt，主目录的CMakeLists.txt通过add_subdirectory添加子目录。（2）包含源文件的子文件夹未包含CMakeLists.txt,子目录编译规则体现在主目录的CMakeLists.txt中。
+
+2. 编译流程  
+   在linux平台中使用CMake构建c/c++工程流程：  
+   * 手动编写CMakeLists.txt
+   * 执行cmake PATH生产 Makefile （PATH 是顶层CMakeLists.txt所在目录）。
+   * 执行命令make进行编译
+3. 构建方式  
+   * 内部构建：不推荐
+   ```c++
+    cmake .  //在当前目录，编译本目录的CMakeLists.txxt 生产Makefile文件和其他文件
+
+    make   //生产target
+   ```
+
+   * 外部构建：推荐使用
+    ```c++
+    mkdir build
+    cd build
+    cmake ..  //在build文件夹中生产makefile等文件, 编译上级CmakeLists.txt
+    make    
+    ```
+
+4. 例子：
+* example 1
+```c++
+    
+    cmake_minimum_required(VERSION 3.0)
+
+    project(HELLO)
+
+    add_executable(helo main.cpp)
+```
+* example 2
+```c++
+    //多目录工程 直接编译
+
+
+    cmake_minimum_required(VERSION 3.16)
+
+    project(cmakeExmaple)
+
+    set(CMAKE_BUILD_TYPE Debug)
+
+    include_directories(${CMAKE_SOURCE_DIR}/include)
+
+    add_executable(main main.cpp src/classOne.cpp)
+
+
+```
+
+5. vscode调试    
+  ```c++
+    
+    //step0: 在CMakeLists.txt中设置为Debug模式
+     set(CMAKE_BUILD_TYPE Debug)    
+
+    //step1 : c_cpp_properties.json中设置以下字段从当前目录设置你需要的头文件路径
+    "includePath": [
+        "${workspaceFolder}/cplusplus/cmakeExample/include"
+      ],
+
+    //step2: 在launch.json 文件中设置以下字段，你需要的可执行文件
+    "program": "/home/pt/Desktop/c++/cplusplus/cmakeExample/build/main",
+
+    //step3 : 打你需要的断点
+
+    //step4 : 按F5即可
+  ```

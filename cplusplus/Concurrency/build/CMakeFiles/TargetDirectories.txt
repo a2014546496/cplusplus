@@ -1,0 +1,3 @@
+/home/pt/Desktop/c++/cplusplus/Concurrency/build/CMakeFiles/rebuild_cache.dir
+/home/pt/Desktop/c++/cplusplus/Concurrency/build/CMakeFiles/edit_cache.dir
+/home/pt/Desktop/c++/cplusplus/Concurrency/build/CMakeFiles/cpp-compiler.dir
