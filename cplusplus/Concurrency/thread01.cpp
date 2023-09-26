@@ -1,14 +1,12 @@
 #include<thread>
 #include <iostream>
 
-void fun()
-{
 
-    std::cout << "111";
-}
 int main()
 {
-    std::thread t1(fun);
-    t1.join();
+    std::unique_ptr<std::string> ptr(new std::string("123456"));
+    std::unique_ptr<std::string> temp = std::move(ptr);
+    std::cout <<*temp;
+    std::cout << int(ptr == nullptr);
     return 0;
 }

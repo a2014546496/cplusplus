@@ -24,5 +24,71 @@ std::thread对象:
     .....
  }
  std::thread myThread(doSomeThing); //创建了一个线程,该线程构造完成后直接执行doSomeThing函数
-```
+``` 
+3. thread  的两个重要函数，join，detach。当线程创建后，调用join函数，则会阻塞其调用线程，完成当前线程（被调用的线程）的任务后再继续执行调用线程。thread以detach的方式运行，则与调用线程分离，调用线程与当前线程竞争cpu资源，若调用线程先结束，则被调用线程会异常。一个线程只能调用join或detach一次，二者不能同时被一个线程调用。
 
+常见用法example:
+```c++
+   //one 使用RAII方式，线程为类的成员变量
+   class threadTest
+   {
+      std::thread &t;
+   public:
+      explicit threadTest*sd::thread & t_):t(t_){}
+
+      threadTest(threadTest const &) =delete;
+      threadTest &operator = (threadTest const &) =delete;
+
+      ~threadTest()
+      {
+         if(t.joinable()) //若线程处于可运行状态
+         {
+            t.join(); // 在析构结束前阻塞，等待线程执行完毕。
+         }
+      }
+   }
+
+
+   class thestTestTwo
+   {
+      std::thread &t;
+   public:
+      void fun()
+      {
+         t = thread([](){...}); 
+         t.detach(); //创建一个线程，并以dettach方式运行。
+      }
+   }
+
+```
+重点注意线程以detach方式运行。调用了detach方式后，线程在后台运行，分离后的线程不能被加入，c++运行库确保，线程退出时，相关资源能正确回收，后台线程的归属和控制c++的运行库都会处理。这种方式一般称为守护线程，特点是长时间运行，生命周期可能从一个应用开始到结束，一般在后台监视文件系统，或则对缓存进行清理，或对数据结构优化。
+
+4. 对线程函数传入参数：
+```c++
+
+   //普通参数传入的方式
+   void f(int i , std::string const & s);
+   ...
+   std::thread t(f, 3, "hello");
+
+   //对字符数组指针参数传入
+   void test(int some_param)
+   {
+      char buffer[1024];
+      sprintf(buffer, "%d", some_param);
+      std::thread t(f,3,std::string(buffer)); // 传入前显示转化为string可以避免莫名的崩溃现象。
+   }
+
+   //传入引用参数
+   void updateData(classOne &data);
+   void test(classOne param)
+   {
+      /*std::thread t(updateData, param); 
+         这种方式 线程的构造函数并不知晓param给线程函数三引用的方式，所以会拷贝一份传给线程函数.
+      */
+
+     //使用 std::ref显示的告诉线程构造函数该参数为引用形式，这样传给线程函数的就不是拷贝了的参数。
+     sttd::thread t(updateData, std::ref(param));
+   }
+```
+5. 转移线程所有权
