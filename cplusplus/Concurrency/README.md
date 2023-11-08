@@ -91,4 +91,93 @@ std::thread对象:
      sttd::thread t(updateData, std::ref(param));
    }
 ```
-5. 转移线程所有权
+5. 转移线程所有权, 使用 std::move()
+
+6. 标识线程，线程标识类型为 std::thread::id,通过线程的成员函数get_id获取，或者当前线程调用std::this_thread::get_id()获取.
+```c++
+   std::thread::id master_thread;
+   void some_core_part_of_algorithm()
+   {
+      if(std::this_thread::get_id() == master_thread)
+      {
+         do_master_thread_work();
+      }
+      do_common_work();
+   } 
+```
+
+## 多线程之间共享数据
+
+1. 条件竞争：多个线程对数据共享进行读写操作。
+2. 使用互斥量进行保护共享数据 ,在 c++中使用头文件为mutex里的一个类为std::mutex
+```c++
+   #include<list>
+   #include<mutex>
+   #include<algorithm>
+   
+   std::list<int> some_list;
+   std::mutex some_mutex;
+
+   void add_to_list(int new_value)
+   {
+      std::lock_guard<std::mutex> guard(some_mutex); //声明及上锁
+      some_list.push_back(new_value);
+   }//出作用域，析构解锁
+
+   bool list_contains(int value_to_find)
+   {
+      std::lock_guard<std::mutex> guard(some_mutex);
+      return std::find(some_list.begin(), some_list.end(), value_to_find) != some_list.end();
+   }
+
+```
+
+3. lock_guard、unique_guard的区别，从代码层面上,unique_guard比lock_guard灵活，可根据需要unlock同时具备lock_guard的特点。从原理上讲unique_guard支持粒度小的互斥.
+
+4. 如何保护不常更新的数据结构,c++ 14 17 可以使用 std::shared_mutex 以及std::shared_timed_mutex与lock_gurad 和 unique_lock配合使用。 ，std::shared_mutex的性能更高，但都依赖于处理器数量。这两种锁统称为读者-写者锁，及支持仅一个写线程独占资源或多个读线程共享资源，而不像std::mutex不论读写线程都上锁然后解锁影响性能。
+
+```c++
+   #include<map>
+   #include<string>
+   #include<mutex>
+   #include<shard_mutex>
+
+   class dns_entry;
+
+   class dns_cache
+   {
+      std::map<std::string, dns_entry> entries;
+      mutable std::shared_mutex entry_mutex;
+   public:
+      dns_entry find_entry(std::string const & domain) const
+      {
+         /*
+            提供共享锁（读者锁）
+        */
+         std::shared_lock<std::shard_mutex> lk(entry_mutex); 
+         /*  shard_mutex 与 mutex
+            区别：当任一个线程拥有一个共享锁时，这个线程或尝试获取一个独占锁，一直到其他线程放弃锁时；当任一线程有一个独占锁时，这个线程就会去获取一个独占锁时，其他线程就无法获取共享锁和独占锁，直到第一个线程放弃拥有的锁。
+         */
+     
+         std::map<std::string, dns_entry>::const_iterator const it = entries.find(domain);
+         return (it == entries.end()) ? dns_entry():it->second;
+      }
+
+      void update_or_add_entry(std::string const & domain, dns_entry const &dns_details)
+      {
+         /*
+            提供独占锁(写者锁)
+         */
+         std::lock_guard<std::shared_mutex> lk(entry_mutex);
+         entries[domain] = dns_details;
+      }
+   }
+```
+
+5. 嵌套锁，std::mutex不支持嵌套锁，若要嵌套可以使用std::recursive_mutex类，与std::mutex的区别仅在于同一个线程的单个实例std::recursive_mutex对象可以获取多个锁。上几次锁就必须释放几次。
+
+
+## 同步并发操作
+
+1. 同步（不仅需要对数据保存，还需要控制多个线程之间的执行顺序），如一个线程完成前，需要等待另外一个线程执行完成。条件变量可以解决这些问题，c++标准库提供了条件变量工具。condition variables 和期望值futures。
+2. 

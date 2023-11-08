@@ -94,6 +94,10 @@
 * EXECUTABLE_OUTPUT_PATH ：可执行文件输出的存放路径
 * LIBRARY_OUTPUT_PATH:库文件输出的存放路径
 
+* PROJECT_SOURCE_DIR:当前项目的路径，即/projectName
+* PROJECT_BINARY_DIR:项目编译后存放的路径 /project/build
+* CMAKE_CURRENT_BINARY_DIR = PROJECT_BINARY_DIR
+* CMAKE_CURRENT_SOURCE_DIR = PROJECT_SOURCE_DIR
 
 ## CMake编译工程
 1. CMake目录结构

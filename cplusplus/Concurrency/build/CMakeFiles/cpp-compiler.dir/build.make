@@ -57,27 +57,27 @@ include CMakeFiles/cpp-compiler.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/cpp-compiler.dir/flags.make
 
-CMakeFiles/cpp-compiler.dir/thread01.cpp.o: CMakeFiles/cpp-compiler.dir/flags.make
-CMakeFiles/cpp-compiler.dir/thread01.cpp.o: ../thread01.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pt/Desktop/c++/cplusplus/Concurrency/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpp-compiler.dir/thread01.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp-compiler.dir/thread01.cpp.o -c /home/pt/Desktop/c++/cplusplus/Concurrency/thread01.cpp
+CMakeFiles/cpp-compiler.dir/thread02.cpp.o: CMakeFiles/cpp-compiler.dir/flags.make
+CMakeFiles/cpp-compiler.dir/thread02.cpp.o: ../thread02.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pt/Desktop/c++/cplusplus/Concurrency/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpp-compiler.dir/thread02.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp-compiler.dir/thread02.cpp.o -c /home/pt/Desktop/c++/cplusplus/Concurrency/thread02.cpp
 
-CMakeFiles/cpp-compiler.dir/thread01.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp-compiler.dir/thread01.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pt/Desktop/c++/cplusplus/Concurrency/thread01.cpp > CMakeFiles/cpp-compiler.dir/thread01.cpp.i
+CMakeFiles/cpp-compiler.dir/thread02.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp-compiler.dir/thread02.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pt/Desktop/c++/cplusplus/Concurrency/thread02.cpp > CMakeFiles/cpp-compiler.dir/thread02.cpp.i
 
-CMakeFiles/cpp-compiler.dir/thread01.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp-compiler.dir/thread01.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pt/Desktop/c++/cplusplus/Concurrency/thread01.cpp -o CMakeFiles/cpp-compiler.dir/thread01.cpp.s
+CMakeFiles/cpp-compiler.dir/thread02.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp-compiler.dir/thread02.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pt/Desktop/c++/cplusplus/Concurrency/thread02.cpp -o CMakeFiles/cpp-compiler.dir/thread02.cpp.s
 
 # Object files for target cpp-compiler
 cpp__compiler_OBJECTS = \
-"CMakeFiles/cpp-compiler.dir/thread01.cpp.o"
+"CMakeFiles/cpp-compiler.dir/thread02.cpp.o"
 
 # External object files for target cpp-compiler
 cpp__compiler_EXTERNAL_OBJECTS =
 
-cpp-compiler: CMakeFiles/cpp-compiler.dir/thread01.cpp.o
+cpp-compiler: CMakeFiles/cpp-compiler.dir/thread02.cpp.o
 cpp-compiler: CMakeFiles/cpp-compiler.dir/build.make
 cpp-compiler: CMakeFiles/cpp-compiler.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pt/Desktop/c++/cplusplus/Concurrency/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cpp-compiler"

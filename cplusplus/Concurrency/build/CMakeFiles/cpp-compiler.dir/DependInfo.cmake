@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pt/Desktop/c++/cplusplus/Concurrency/thread01.cpp" "/home/pt/Desktop/c++/cplusplus/Concurrency/build/CMakeFiles/cpp-compiler.dir/thread01.cpp.o"
+  "/home/pt/Desktop/c++/cplusplus/Concurrency/thread02.cpp" "/home/pt/Desktop/c++/cplusplus/Concurrency/build/CMakeFiles/cpp-compiler.dir/thread02.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

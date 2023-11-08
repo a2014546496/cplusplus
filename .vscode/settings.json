@@ -51,5 +51,6 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/pt/Desktop/c++/cplusplus/Concurrency"
 }

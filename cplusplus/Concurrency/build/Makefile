@@ -123,32 +123,32 @@ cpp-compiler/fast:
 	$(MAKE) -f CMakeFiles/cpp-compiler.dir/build.make CMakeFiles/cpp-compiler.dir/build
 .PHONY : cpp-compiler/fast
 
-thread01.o: thread01.cpp.o
+thread02.o: thread02.cpp.o
 
-.PHONY : thread01.o
+.PHONY : thread02.o
 
 # target to build an object file
-thread01.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp-compiler.dir/build.make CMakeFiles/cpp-compiler.dir/thread01.cpp.o
-.PHONY : thread01.cpp.o
+thread02.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp-compiler.dir/build.make CMakeFiles/cpp-compiler.dir/thread02.cpp.o
+.PHONY : thread02.cpp.o
 
-thread01.i: thread01.cpp.i
+thread02.i: thread02.cpp.i
 
-.PHONY : thread01.i
+.PHONY : thread02.i
 
 # target to preprocess a source file
-thread01.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp-compiler.dir/build.make CMakeFiles/cpp-compiler.dir/thread01.cpp.i
-.PHONY : thread01.cpp.i
+thread02.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp-compiler.dir/build.make CMakeFiles/cpp-compiler.dir/thread02.cpp.i
+.PHONY : thread02.cpp.i
 
-thread01.s: thread01.cpp.s
+thread02.s: thread02.cpp.s
 
-.PHONY : thread01.s
+.PHONY : thread02.s
 
 # target to generate assembly for a file
-thread01.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp-compiler.dir/build.make CMakeFiles/cpp-compiler.dir/thread01.cpp.s
-.PHONY : thread01.cpp.s
+thread02.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp-compiler.dir/build.make CMakeFiles/cpp-compiler.dir/thread02.cpp.s
+.PHONY : thread02.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... cpp-compiler"
-	@echo "... thread01.o"
-	@echo "... thread01.i"
-	@echo "... thread01.s"
+	@echo "... thread02.o"
+	@echo "... thread02.i"
+	@echo "... thread02.s"
 .PHONY : help
 
 
