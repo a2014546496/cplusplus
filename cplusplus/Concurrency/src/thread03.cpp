@@ -41,7 +41,14 @@ T parallel_accumulate(Iterator first, Iterator last, T init)
 
         threads[i] = std::thread(
             accumulate_block<Iterator,T >(),
-            block_start = block_end;
-        )
+            block_start = block_end, std::ref(results[i]));
+        block_start = block_end;
     }
+
+    accumulate_block<Iterator, T> ()(
+        block_start, last, results[num_threads - 1];
+        std::for_each(threads.begin(), threads.end(),std::men_fn(&std::thread::join))
+    );
+    
+
 }
