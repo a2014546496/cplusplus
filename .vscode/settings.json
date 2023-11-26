@@ -50,7 +50,21 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "cstring": "cpp",
+        "bitset": "cpp",
+        "complex": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "cinttypes": "cpp",
+        "typeindex": "cpp",
+        "condition_variable": "cpp",
+        "mutex": "cpp",
+        "queue": "cpp",
+        "buffer": "cpp",
+        "netfwd": "cpp",
+        "future": "cpp"
     },
     "cmake.sourceDirectory": "/home/pt/Desktop/c++/cplusplus/Concurrency"
 }

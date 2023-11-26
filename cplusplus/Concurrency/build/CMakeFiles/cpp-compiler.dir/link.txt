@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/cpp-compiler.dir/thread02.cpp.o  -o cpp-compiler  -lpthread 
