@@ -66,5 +66,6 @@
         "netfwd": "cpp",
         "future": "cpp"
     },
-    "cmake.sourceDirectory": "/home/pt/Desktop/c++/cplusplus/Concurrency"
+    "cmake.sourceDirectory": "/home/pt/Desktop/c++/cplusplus/Concurrency",
+    "git.ignoreLimitWarning": true
 }
