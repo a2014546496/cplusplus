@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/classOne.h
+iostream
+-
+string
+-
+
+/home/pt/Desktop/c++/cplusplus/cmakeExample/main.cpp
+classOne.h
+/home/pt/Desktop/c++/cplusplus/cmakeExample/classOne.h
+
+/home/pt/Desktop/c++/cplusplus/cmakeExample/src/classOne.cpp
+classOne.h
+/home/pt/Desktop/c++/cplusplus/cmakeExample/src/classOne.h
+
