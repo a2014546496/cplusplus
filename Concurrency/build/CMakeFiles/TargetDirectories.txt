@@ -1,0 +1,3 @@
+/home/pt/桌面/tech/cplusplus/Concurrency/build/CMakeFiles/mq.dir
+/home/pt/桌面/tech/cplusplus/Concurrency/build/CMakeFiles/edit_cache.dir
+/home/pt/桌面/tech/cplusplus/Concurrency/build/CMakeFiles/rebuild_cache.dir

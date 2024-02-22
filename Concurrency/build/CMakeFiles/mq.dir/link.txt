@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/mq.dir/src/Threadsafe_queue.cpp.o -o mq 

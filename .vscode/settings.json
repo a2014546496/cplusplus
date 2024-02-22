@@ -64,8 +64,13 @@
         "queue": "cpp",
         "buffer": "cpp",
         "netfwd": "cpp",
-        "future": "cpp"
+        "future": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "numbers": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp"
     },
-    "cmake.sourceDirectory": "/home/pt/Desktop/c++/cplusplus/Concurrency",
+    "cmake.sourceDirectory": "/home/pt/桌面/tech/cplusplus/Concurrency",
     "git.ignoreLimitWarning": true
 }
