@@ -75,4 +75,55 @@
     }
     ```
 
-    
+    ## 三、MVC模式，Model，View
+
+    ![Alt text](image-1.png)
+
+ 1. 什么是MVC，Model，View，Controller？ 数据是实际数据（如SQL结果、数据表、文本文件等）、模型（数据模型）与实际数据通信，为视图组件提供数据接口，用于视图显示数据。View就是视图用于展示信息。
+ 2. QT中提供了数据模型。
+
+    ![Alt text](image-2.png)
+    ![Alt text](image-3.png)
+
+    其中抽象类，可以自定义类继承并实现其中的方法。
+
+3. 视图组件
+    ![Alt text](image-4.png)
+    ![Alt text](image-5.png)
+
+4. 代理（Controller）
+
+    代理类负责提供对数据模型的编辑（CURD），然后显示在对应的界面中。
+
+    ![Alt text](image-6.png)
+
+
+## 四、 常用控件
+
+1. QPushButton、QToolButton、QCheckButton等常用按钮。
+
+2. LineEdit、SpinBox等常用编辑框和滑动栏。
+
+3. QListView、QTreeView、QTableView等以View结尾的用于 模型/视图（Model/View）结构，数据存放在Model中。
+
+4. QListWidget、QTreeWidget等以Widget结尾的类，是直接将数据存储在每一个项中。
+
+5. 标签和图片，QLabel、QPixmap。
+
+
+## 五、 常用布局
+
+
+## 六、多窗体设计
+
+## 七、绘图
+
+## 八、自定义控件
+
+## 九、音频输入
+
+## 十、播放视频
+
+
+## 十一、Qt应用发布
+
